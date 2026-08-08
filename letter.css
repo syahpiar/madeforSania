@@ -10,18 +10,13 @@ html,
 body {
     margin: 0;
     padding: 0;
-
     width: 100%;
     min-height: 100%;
-
     overflow-x: hidden;
 }
 
 body {
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     background:
         linear-gradient(
@@ -39,21 +34,17 @@ body {
 ========================================= */
 
 .background {
-
     position: fixed;
-
     inset: 0;
 
     pointer-events: none;
 
     background:
-
         radial-gradient(
             circle at 20% 20%,
             rgba(255,255,255,.5),
             transparent 30%
         ),
-
         radial-gradient(
             circle at 80% 70%,
             rgba(255,255,255,.35),
@@ -69,68 +60,45 @@ body {
 ========================================= */
 
 .page-section {
-
     width: 100%;
-
     min-height: 100vh;
 
     padding: 30px 15px;
 
     position: relative;
-
     z-index: 3;
-
 }
 
 
 /* =========================================
-   HIDDEN
+   HIDDEN / ACTIVE
 ========================================= */
 
 .hidden-section {
-
     display: none !important;
-
 }
 
-
-/* =========================================
-   ACTIVE
-========================================= */
-
 .active-section {
-
     display: flex;
 
     justify-content: center;
-
-    align-items: center;
+    align-items: flex-start;
 
     animation:
-        sectionFade
-        .8s ease;
-
+        sectionFade .8s ease;
 }
 
 
 @keyframes sectionFade {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(20px);
-
+        transform: translateY(20px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
-
+        transform: translateY(0);
     }
 
 }
@@ -142,16 +110,23 @@ body {
 
 .paper {
 
-    width: 90%;
+    width: 92%;
 
     max-width: 850px;
 
-    margin: auto;
+    /*
+       Paper panjang.
+       Tidak dibatasi tinggi pendek.
+    */
 
-    padding: 45px;
+    min-height: 1400px;
+
+    margin: 20px auto 50px;
+
+    padding: 65px 70px;
 
     background:
-        rgba(255,253,248,.97);
+        rgba(255,253,248,.98);
 
     border:
         2px dashed #d6c49b;
@@ -161,6 +136,35 @@ body {
     box-shadow:
         0 15px 40px
         rgba(0,0,0,.15);
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================
+   PAPER DECORATION
+========================================= */
+
+.paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border:
+        1px solid
+        rgba(214,196,155,.35);
+
+    border-radius: 12px;
+
+    pointer-events: none;
 
 }
 
@@ -172,7 +176,7 @@ body {
 .paper > h1 {
 
     margin:
-        0 0 35px;
+        0 0 50px;
 
     text-align: center;
 
@@ -180,9 +184,15 @@ body {
         "Dancing Script",
         cursive;
 
-    font-size: 52px;
+    font-size: 54px;
+
+    line-height: 1.2;
 
     color: #7b2cbf;
+
+    position: relative;
+
+    z-index: 1;
 
 }
 
@@ -192,6 +202,15 @@ body {
 ========================================= */
 
 #letterContent {
+
+    /*
+       Area surat dibuat panjang.
+       Teks akan ditulis di dalamnya.
+    */
+
+    width: 100%;
+
+    min-height: 1050px;
 
     text-align: left;
 
@@ -207,6 +226,30 @@ body {
 
     color: #444;
 
+    letter-spacing:
+        0.02em;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+/* =========================================
+   GARIS KERTAS
+========================================= */
+
+#letterContent {
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 47px,
+            rgba(170,150,130,.12) 48px
+        );
+
 }
 
 
@@ -220,9 +263,15 @@ body {
 
     margin-top: 45px;
 
+    padding-top: 25px;
+
     text-align: center;
 
     opacity: 0;
+
+    position: relative;
+
+    z-index: 2;
 
 }
 
@@ -241,35 +290,36 @@ body {
 @keyframes endingAppear {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(25px);
-
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0);
-
     }
 
 }
 
 
+/* =========================================
+   HAPPY BIRTHDAY
+========================================= */
+
 .letter-ending h2 {
 
-    margin: 0 0 25px;
+    margin:
+        0 0 25px;
 
     font-family:
         "Dancing Script",
         cursive;
 
-    font-size: 46px;
+    font-size: 48px;
+
+    line-height: 1.3;
 
     color: #9d4edd;
 
@@ -434,17 +484,13 @@ button:active {
 @keyframes unifiedSlide {
 
     from {
-
         transform:
             translateX(0);
-
     }
 
     to {
-
         transform:
             translateX(-50%);
-
     }
 
 }
@@ -503,7 +549,7 @@ button:active {
 
 
 /* =========================================
-   MOBILE
+   TABLET
 ========================================= */
 
 @media (max-width: 768px) {
@@ -511,72 +557,112 @@ button:active {
     .page-section {
 
         padding:
-            20px 10px;
+            15px 8px;
 
     }
 
 
     .paper {
 
-        width: 94%;
+        width: 96%;
+
+        min-height: 1250px;
+
+        margin:
+            10px auto 35px;
 
         padding:
-            28px 20px;
+            45px 28px;
+
+        border-radius:
+            15px;
+
+    }
+
+
+    .paper::before {
+
+        inset:
+            12px;
 
     }
 
 
     .paper > h1 {
 
-        font-size: 40px;
+        font-size:
+            40px;
+
+        margin-bottom:
+            40px;
 
     }
 
 
     #letterContent {
 
-        font-size: 20px;
+        min-height:
+            900px;
 
-        line-height: 1.85;
+        font-size:
+            20px;
+
+        line-height:
+            1.9;
+
+        background-image:
+            repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent 37px,
+                rgba(170,150,130,.12) 38px
+            );
 
     }
 
 
     .letter-ending h2 {
 
-        font-size: 36px;
+        font-size:
+            36px;
 
     }
 
 
     .gallery-unified > h1 {
 
-        font-size: 42px;
+        font-size:
+            42px;
 
     }
 
 
     .gallery-track img {
 
-        width: 95px;
+        width:
+            95px;
 
-        height: 130px;
+        height:
+            130px;
 
     }
 
 
     .unified-ending {
 
-        font-size: 18px;
+        font-size:
+            18px;
 
-        line-height: 1.8;
+        line-height:
+            1.8;
 
     }
 
 
     .unified-ending .love {
 
-        font-size: 34px;
+        font-size:
+            34px;
 
     }
 
@@ -589,129 +675,106 @@ button:active {
 
 @media (max-width: 480px) {
 
-    .paper {
-
-        width: 96%;
+    .page-section {
 
         padding:
-            23px 17px;
+            10px 5px;
+
+    }
+
+
+    .paper {
+
+        width:
+            98%;
+
+        min-height:
+            1150px;
+
+        margin:
+            5px auto 25px;
+
+        padding:
+            38px 22px;
+
+        border-radius:
+            13px;
+
+    }
+
+
+    .paper::before {
+
+        inset:
+            9px;
 
     }
 
 
     .paper > h1 {
 
-        font-size: 34px;
+        font-size:
+            34px;
+
+        margin-bottom:
+            35px;
 
     }
 
 
     #letterContent {
 
-        font-size: 18px;
+        min-height:
+            820px;
 
-        line-height: 1.8;
+        font-size:
+            18px;
+
+        line-height:
+            1.85;
+
+        background-image:
+            repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent 33px,
+                rgba(170,150,130,.11) 34px
+            );
 
     }
 
 
     .letter-ending h2 {
 
-        font-size: 31px;
+        font-size:
+            31px;
 
     }
 
 
     .gallery-track img {
 
-        width: 85px;
+        width:
+            85px;
 
-        height: 120px;
-
-    }
-
-}
-
-
-/* =========================================
-   PAPER PANJANG
-========================================= */
-
-.paper {
-
-    min-height: 82vh;
-
-    height: auto;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-start;
-
-}
-
-
-#letterContent {
-
-    min-height: 58vh;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    letter-spacing:
-        0.02em;
-
-}
-
-
-/* =========================================
-   MOBILE PAPER PANJANG
-========================================= */
-
-@media (max-width: 768px) {
-
-    .paper {
-
-        min-height: 88vh;
+        height:
+            120px;
 
     }
 
 
-    #letterContent {
+    .unified-ending {
 
-        min-height: 62vh;
-
-        font-size: 20px;
-
-        line-height: 1.9;
-
-    }
-
-}
-
-
-/* =========================================
-   SMALL PHONE PAPER PANJANG
-========================================= */
-
-@media (max-width: 480px) {
-
-    .paper {
-
-        min-height: 90vh;
+        font-size:
+            17px;
 
     }
 
 
-    #letterContent {
+    .unified-ending .love {
 
-        min-height: 65vh;
-
-        font-size: 18px;
-
-        line-height: 1.85;
+        font-size:
+            30px;
 
     }
 
