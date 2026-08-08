@@ -1,0 +1,51 @@
+.ending{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+.ending h1{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:65px;
+
+    color:#7b2cbf;
+
+}
+
+.ending p{
+
+    margin:25px 0;
+
+    max-width:650px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+.ending h2{
+
+    margin-bottom:35px;
+
+    color:#9d4edd;
+
+    font-size:40px;
+
+    font-family:'Dancing Script',cursive;
+
+}

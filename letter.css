@@ -1,0 +1,627 @@
+/* =========================================
+   LETTER + GALLERY UNIFIED
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+}
+
+body {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fde2e4,
+            #e9d5ff
+        );
+
+    color: #444;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.5),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,.35),
+            transparent 30%
+        );
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.page-section {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 30px 15px;
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+
+/* HIDDEN */
+
+.hidden-section {
+
+    display: none !important;
+
+}
+
+
+/* ACTIVE */
+
+.active-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation:
+        sectionFade
+        .8s ease;
+
+}
+
+
+@keyframes sectionFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   PAPER
+========================================= */
+
+.paper {
+
+    width: 90%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    background:
+        rgba(255,253,248,.97);
+
+    border:
+        2px dashed #d6c49b;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.15);
+
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.paper > h1 {
+
+    margin:
+        0 0 35px;
+
+    text-align: center;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 52px;
+
+    color: #7b2cbf;
+
+}
+
+
+/* =========================================
+   LETTER CONTENT
+========================================= */
+
+#letterContent {
+
+    text-align: left;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+
+    overflow-wrap: break-word;
+
+    font-size: 25px;
+
+    line-height: 2;
+
+    color: #444;
+
+}
+
+
+/* =========================================
+   LETTER ENDING
+========================================= */
+
+.letter-ending {
+
+    display: none;
+
+    margin-top: 45px;
+
+    text-align: center;
+
+    opacity: 0;
+
+}
+
+
+.letter-ending.show {
+
+    display: block;
+
+    animation:
+        endingAppear
+        1s ease forwards;
+
+}
+
+
+@keyframes endingAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.letter-ending h2 {
+
+    margin: 0 0 25px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 46px;
+
+    color: #9d4edd;
+
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.bottom {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+}
+
+
+button {
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding:
+        15px 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c77dff,
+            #9d4edd
+        );
+
+    color: white;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(157,78,221,.3);
+
+    transition:
+        .3s;
+
+}
+
+
+button:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+}
+
+
+button:active {
+
+    transform:
+        scale(.96);
+
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery-unified {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+
+.gallery-unified > h1 {
+
+    margin:
+        0 0 30px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 52px;
+
+    color: #7b2cbf;
+
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.slider {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    margin:
+        20px 0 40px;
+
+}
+
+
+.gallery-track {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: max-content;
+
+    animation:
+        unifiedSlide
+        28s linear infinite;
+
+}
+
+
+.gallery-track img {
+
+    width: 120px;
+
+    height: 165px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 20px
+        rgba(0,0,0,.15);
+
+}
+
+
+/* LOOP */
+
+@keyframes unifiedSlide {
+
+    from {
+
+        transform:
+            translateX(0);
+
+    }
+
+    to {
+
+        transform:
+            translateX(-50%);
+
+    }
+
+}
+
+
+/* =========================================
+   ENDING
+========================================= */
+
+.unified-ending {
+
+    max-width: 700px;
+
+    margin:
+        0 auto;
+
+    text-align: center;
+
+    color: #555;
+
+    font-size: 22px;
+
+    line-height: 2;
+
+}
+
+
+.unified-ending p {
+
+    margin:
+        0 0 25px;
+
+}
+
+
+.unified-ending .love {
+
+    margin-top: 35px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 40px;
+
+    color: #9d4edd;
+
+}
+
+
+.unified-btn {
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .page-section {
+
+        padding:
+            20px 10px;
+
+    }
+
+
+    .paper {
+
+        width: 94%;
+
+        padding:
+            28px 20px;
+
+    }
+
+
+    .paper > h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    #letterContent {
+
+        font-size: 20px;
+
+        line-height: 1.85;
+
+    }
+
+
+    .letter-ending h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .gallery-unified > h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .gallery-track img {
+
+        width: 95px;
+
+        height: 130px;
+
+    }
+
+
+    .unified-ending {
+
+        font-size: 18px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .unified-ending .love {
+
+        font-size: 34px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .paper {
+
+        width: 96%;
+
+        padding:
+            23px 17px;
+
+    }
+
+
+    .paper > h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    #letterContent {
+
+        font-size: 18px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .letter-ending h2 {
+
+        font-size: 31px;
+
+    }
+
+
+    .gallery-track img {
+
+        width: 85px;
+
+        height: 120px;
+
+    }
+
+}

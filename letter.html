@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sania Widayanti ❤️</title>
+
+    <link rel="stylesheet" href="letter.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="flower.css">
+    <link rel="stylesheet" href="heart.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div id="flowers"></div>
+
+<div id="hearts"></div>
+
+
+<!-- =========================
+     SATU AUDIO UNTUK SEMUA
+========================= -->
+
+<audio
+    id="music"
+    src="assets/music/song.mp3"
+    loop
+    preload="auto">
+</audio>
+
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<section
+    id="letterSection"
+    class="page-section active-section"
+>
+
+    <div class="paper">
+
+        <h1>
+            Untuk Sania Widayanti ❤️
+        </h1>
+
+        <div id="letterContent">
+            Memuat surat...
+        </div>
+
+
+        <!--
+            Awalnya tersembunyi.
+            Muncul setelah surat selesai.
+        -->
+
+        <div
+            id="letterEnding"
+            class="letter-ending"
+        >
+
+            <h2>
+                Happy Birthday Sayangg ❤️
+            </h2>
+
+            <div class="bottom">
+
+                <button id="nextBtn">
+                    Next 📸
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY + ENDING
+========================= -->
+
+<section
+    id="gallerySection"
+    class="page-section hidden-section"
+>
+
+    <div class="gallery-unified">
+
+        <h1>
+            Happy Birthday Sayangg ❤️
+        </h1>
+
+
+        <!-- GALLERY -->
+
+        <div class="slider">
+
+            <div class="gallery-track">
+
+                <img
+                    src="assets/photos/1.jpg"
+                    alt="Kenangan 1"
+                >
+
+                <img
+                    src="assets/photos/2.jpg"
+                    alt="Kenangan 2"
+                >
+
+                <img
+                    src="assets/photos/3.jpg"
+                    alt="Kenangan 3"
+                >
+
+                <img
+                    src="assets/photos/4.jpg"
+                    alt="Kenangan 4"
+                >
+
+                <img
+                    src="assets/photos/5.jpg"
+                    alt="Kenangan 5"
+                >
+
+
+                <!-- DUPLIKAT UNTUK LOOP -->
+
+                <img
+                    src="assets/photos/1.jpg"
+                    alt="Kenangan 1"
+                >
+
+                <img
+                    src="assets/photos/2.jpg"
+                    alt="Kenangan 2"
+                >
+
+                <img
+                    src="assets/photos/3.jpg"
+                    alt="Kenangan 3"
+                >
+
+                <img
+                    src="assets/photos/4.jpg"
+                    alt="Kenangan 4"
+                >
+
+                <img
+                    src="assets/photos/5.jpg"
+                    alt="Kenangan 5"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             ENDING
+        ========================= -->
+
+        <div class="unified-ending">
+
+            <p>
+                Terima kasih sudah meluangkan waktu
+                membaca surat ini.
+            </p>
+
+            <p>
+                Mungkin website ini sederhana,
+                tetapi setiap bagiannya dibuat
+                dengan penuh perhatian.
+            </p>
+
+            <p>
+                Semoga setiap langkahmu
+                selalu dipenuhi kebahagiaan,
+                senyuman,
+                dan orang-orang baik.
+            </p>
+
+            <p class="love">
+
+                Love,<br>
+
+                Piar ❤️
+
+            </p>
+
+
+            <button
+                id="backBtn"
+                class="unified-btn"
+            >
+                💌 Baca Lagi
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="config.js"></script>
+
+<script src="flower.js"></script>
+
+<script src="heart.js"></script>
+
+<script src="letter.js"></script>
+
+
+</body>
+
+</html>
